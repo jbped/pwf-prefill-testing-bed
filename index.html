@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>Lendio Start Prefill</title>
+</head>
+<body>
+  <div>
+    <lendio-start id="prefill-pwf" prefill="true"/>
+  </div>
+  <div id="prefill-info">
+    <div id="input-block">
+      <h3>Prefill Inputs</h3>
+      <div class="input-container">
+        <label for="amountSeeking">Amount Seeking</label>
+        <input type="text" name="amountSeeking" id="amountSeekingInput" data-type="number">
+      </div>
+      <div class="input-container">
+        <label for="timeInBusiness">Time in Business (months)</label>
+        <input type="text" name="timeInBusiness" id="timeInBusinessInput" data-type="number">
+      </div>
+      <div class="input-container">
+        <label for="averageMonthlySales">Average Monthly Sales</label>
+        <input type="text" name="averageMonthlySales" id="averageMonthlySalesInput" data-type="number">
+      </div>
+      <div class="input-container">
+        <label for="creditScore">Credit Score</label>
+        <input type="text" name="creditScore" id="creditScoreInput" data-type="number">
+      </div>
+      <div class="input-container">
+        <label for="entityType">Entity Type</label>
+        <input type="text" name="entityType" id="entityTypeInput">
+      </div>
+      <div class="input-container">
+        <label for="businessName">Business Name</label>
+        <input type="text" name="businessName" id="businessNameInput">
+      </div>
+      <div class="input-container">
+        <label for="first">First Name</label>
+        <input type="text" name="first" id="firstInput">
+      </div>
+      <div class="input-container">
+        <label for="last">Last Name</label>
+        <input type="text" name="last" id="lastInput">
+      </div>
+      <div class="input-container">
+        <label for="email">Email Address</label>
+        <input type="text" name="email" id="emailInput">
+      </div>
+      <div class="input-container">
+        <label for="phone">Phone Number</label>
+        <input type="text" name="phone" id="phoneInput">
+      </div>
+    </div>
+    <div id="code">
+      <h3>Prefill Body</h3>
+      <div class="code-block">
+        <pre>
+          <code id="prefill-object"></code>
+        </pre>
+      </div>
+    </div>
+  </div>
+  <div>
+    <button id="prefill-test" class="prefill" type="button">Prefill</button>
+    <button id="prefill-variables" class="prefill" type="button">Get Prefill Vars</button>
+  </div>
+  <div id="prefill-vars">
+    <h3>Prefillable Variables</h3>
+    <div class="code-block">
+      <pre>
+        <code id="variables-object"></code>
+      </pre>
+    </div>
+  </div>
+</body>
+<script src="./script.js"></script>
+<script type="text/javascript" src="https://tools.lendio.com/lendio-start.umd.js"></script>
+</html>
