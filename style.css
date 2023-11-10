@@ -81,15 +81,16 @@ select {
 #prefill-info {
   display: flex;
   flex-direction: row;
-  gap: 2rem
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 
-#code {
+#prefill-info > * {
   flex-grow: 1;
 }
 
 .code-block {
-  background-color: rgb(227, 227, 227);
+  background-color: rgb(234, 234, 234);
   width: auto;
   padding: 1rem;
 }

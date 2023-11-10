@@ -2,6 +2,7 @@ window.onload = function() {
   const inputs = document.querySelectorAll('input[type="text"]');
   const textDisplay = document.getElementById('prefill-object');
   const variablesDisplay = document.getElementById('variables-object');
+  const pwf = document.getElementById('prefill-pwf');
   const prefillData = {
     amountSeeking: null,
     timeInBusiness: null,
@@ -16,8 +17,9 @@ window.onload = function() {
   };
 
   const prefillBody = {};
-
   textDisplay.innerText = JSON.stringify(prefillData, undefined, 2);
+  variablesDisplay.innerText = JSON.stringify(pwf.getPrefillableValues(), undefined, 2);
+
   
   document.getElementById('prefill-test').addEventListener('click', () => {
     Object.values(prefillData).forEach((v, i) => {
@@ -26,13 +28,11 @@ window.onload = function() {
       }
     });
     console.log('Sourced prefill data:', prefillBody);
-    document.getElementById('prefill-pwf').setPrefill(prefillBody);
+    pwf.setPrefill(prefillBody);
   });
   
   document.getElementById('prefill-variables').addEventListener('click', () => {
-    const variables = document
-      .getElementById('prefill-pwf')
-      .getPrefillableValues();
+    const variables = pwf.getPrefillableValues();
     console.log( 'Available Prefill Variables:', variables);
     variablesDisplay.innerText = JSON.stringify(variables, undefined, 2);
   });
