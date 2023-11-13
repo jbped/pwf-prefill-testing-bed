@@ -46,12 +46,12 @@ window.onload = function() {
 
     inputEl.addEventListener('input', (e) => {
       const regex = /[0-9]/g;
-      if (type === 'number' && regex.test(e.target.value)) {
-        prefillData[id] = parseInt(e.target.value);
+      if (e.target.dataset.type === 'number' && regex.test(e.target.value)) {
+        prefillData[e.target.name] = parseInt(e.target.value);
       } else if (e.target.value.length > 0) {
-        prefillData[id] = e.target.value;
+        prefillData[e.target.name] = e.target.value;
       } else {
-        prefillData[id] = null;
+        prefillData[e.target.name] = null;
       }
 
       textDisplay.innerText = JSON.stringify(prefillData, undefined, 2);
