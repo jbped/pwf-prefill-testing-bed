@@ -51,6 +51,7 @@ window.onload = function() {
     inputEl.setAttribute('id', `${id}Input`);
     inputEl.setAttribute('name', id);
     inputEl.setAttribute('data-type', type);
+    inputEl.className = 'prefill-input';
 
     inputEl.addEventListener('input', (e) => {
       const regex = /[0-9]/g;

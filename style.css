@@ -76,6 +76,12 @@ select {
 
 .input-container {
   margin: .5rem 0;
+  display: flex;
+  gap: .5rem;
+}
+
+.prefill-input {
+  flex-grow: 1;
 }
 
 #prefill-info {
