@@ -1,16 +1,14 @@
 window.onload = function() {
-  const inputBlock = document.getElementById('input-block');
+  const inputsEl = document.getElementById('inputs');
   const textDisplay = document.getElementById('prefill-object');
   const variablesDisplay = document.getElementById('variables-object');
   const pwf = document.getElementById('prefill-pwf');
+  let customQuestions;
 
-  const prefillables = pwf.getPrefillableValues();
+  let prefillables = pwf.getPrefillableValues();
   const prefillData = {};
-  Object.keys(prefillables).forEach( key => {
-    const dataType = prefillables[key];
-    prefillData[key] = null;
-    buildInput(key, dataType);
-  })
+
+  inputBuilder();
   textDisplay.innerText = JSON.stringify(prefillData, undefined, 2);
   variablesDisplay.innerText = JSON.stringify(pwf.getPrefillableValues(), undefined, 2);
 
@@ -21,16 +19,26 @@ window.onload = function() {
   });
   
   document.getElementById('prefill-variables').addEventListener('click', () => {
-    const variables = pwf.getPrefillableValues();
-    console.log( 'Available Prefill Variables:', variables);
-    variablesDisplay.innerText = JSON.stringify(variables, undefined, 2);
+    pwf.questions = customQuestions;
+    prefillables = pwf.getPrefillableValues();
+    variablesDisplay.innerText = JSON.stringify(prefillables, undefined, 2);
+    inputBuilder();
   });
 
-  // document.getElementById('customQuestions').addEventListener('input', (e) => {
-  //   pwf.questions = JSON.parse(e.target.value);
-  // });
+  document.getElementById('customQuestions').addEventListener('input', (e) => {
+    customQuestions = JSON.parse(e.target.value);
+  });
 
-  function buildInput(id, type) {
+  function inputBuilder() {
+    inputsEl.innerHTML = '';
+    Object.keys(prefillables).forEach((key) => {
+      const dataType = prefillables[key];
+      prefillData[key] = null;
+      addInputElement(key, dataType);
+    });
+  }
+
+  function addInputElement(id, type) {
     const inputContainer = document.createElement('div');
     inputContainer.className = 'input-container';
 
@@ -59,7 +67,7 @@ window.onload = function() {
 
     inputContainer.appendChild(inputLabel);
     inputContainer.appendChild(inputEl);
-    inputBlock.appendChild(inputContainer);
+    inputsEl.appendChild(inputContainer);
   }
   
   function camelCaseToTitle(val) {
