@@ -14,8 +14,8 @@
   <div id="prefill-info">
     <div id="input-block">
       <h3>Prefill Inputs</h3>
-      <div id="inputs">
-      </div>
+      <div id="inputs"></div>
+      <button id="prefill-test" class="prefill" type="button">Prefill</button>
     </div>
     <div id="code">
       <h3>Prefill Body</h3>
@@ -35,12 +35,12 @@
     </div>
   </div>
   <div>
-    <button id="prefill-test" class="prefill" type="button">Prefill</button>
-    <button id="prefill-variables" class="prefill" type="button">Get Prefill Vars</button>
+    
   </div>
-  <div>
-    <label for="customQuestions">Custom Questions String: </label>
-    <input type="text" name="customQuestions" id="customQuestions">
+  <div id="custom-questions-container">
+    <label for="custom-questions">Custom Questions Array: </label>
+    <input type="text" name="custom-questions" id="custom-questions">
+    <button id="prefill-variables" class="prefill" type="button">Update Prefillable Variables</button>
   </div>
 </body>
 <script src="./script.js"></script>

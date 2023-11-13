@@ -25,7 +25,7 @@ window.onload = function() {
     inputBuilder();
   });
 
-  document.getElementById('customQuestions').addEventListener('input', (e) => {
+  document.getElementById('custom-questions').addEventListener('input', (e) => {
     customQuestions = JSON.parse(e.target.value);
   });
 

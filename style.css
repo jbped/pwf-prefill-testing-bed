@@ -83,9 +83,20 @@ select {
   flex-direction: row;
   gap: 2rem;
   flex-wrap: wrap;
+  margin: 1rem 0;
 }
 
 #prefill-info > * {
+  flex-grow: 1;
+}
+
+#custom-questions-container {
+  display: flex;
+  gap: .5rem;
+  margin: 1rem 0;
+}
+
+#custom-questions {
   flex-grow: 1;
 }
 
