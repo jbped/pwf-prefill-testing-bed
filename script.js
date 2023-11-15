@@ -5,12 +5,12 @@ window.onload = function() {
   const pwf = document.getElementById('prefill-pwf');
   let customQuestions;
 
-  let prefillables = pwf.getPrefillableValues();
+  let prefillables = pwf.getPrefillableVariables();
   const prefillData = {};
 
   inputBuilder();
   textDisplay.innerText = JSON.stringify(prefillData, undefined, 2);
-  variablesDisplay.innerText = JSON.stringify(pwf.getPrefillableValues(), undefined, 2);
+  variablesDisplay.innerText = JSON.stringify(pwf.getPrefillableVariables(), undefined, 2);
 
   
   document.getElementById('prefill-test').addEventListener('click', () => {
@@ -20,7 +20,7 @@ window.onload = function() {
   
   document.getElementById('prefill-variables').addEventListener('click', () => {
     pwf.questions = customQuestions;
-    prefillables = pwf.getPrefillableValues();
+    prefillables = pwf.getPrefillableVariables();
     variablesDisplay.innerText = JSON.stringify(prefillables, undefined, 2);
     inputBuilder();
   });
